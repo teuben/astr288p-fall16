@@ -16,3 +16,9 @@ alias sdir='ls -sF | sort -rn | head'
 # history
 alias h='history'
 alias hgrep='history|grep'
+
+# view files with page forward, backward, and /search
+alias m='less'
+
+# my favorite calculator
+alias i='ipython'
