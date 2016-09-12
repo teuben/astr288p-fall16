@@ -1,4 +1,18 @@
 # ~/.bash_aliases
 #
 
-alias dth='ls -lt|head'
+# long listing
+alias d='ls -sFl'
+
+# most recent files
+alias dth='ls -lt | head'
+
+# files with sizes and intent
+alias dir='ls -sF'
+
+# biggest files
+alias sdir='ls -sF | sort -rn | head'
+
+# history
+alias h='history'
+alias hgrep='history|grep'
