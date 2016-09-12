@@ -191,14 +191,16 @@ Scripting:
  --------------
    1) 'locate'    (but:   "sudo updatedb" - normally not enabled on Mac)
 
+       locate -i poster
+
       
    2)  find       (arguably one of the more complex UNIX commands)
      
-       find . -name "*poster*"
+       find $HOME/Talks -name "*oster*"
 
 
-Your own PATH:
---------------
+Adding to your own PATH:
+------------------------
     cd                        # move to your home directory
     mkdir bin                 # create
     cp astr288p/bin/*  bin
@@ -209,6 +211,7 @@ Your own PATH:
 
 
 VNC:
+----
 
 ssh teuben288@ursa.astro.umd.edu
 
