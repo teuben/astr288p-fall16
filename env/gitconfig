@@ -1,0 +1,24 @@
+#  ~/.gitconfig
+
+[user]
+	email = yourname@yourcomain
+	name = Your Name
+
+# it's nice to have a longer timeout, the default is rather short (timeout is in seconds)
+[credential]
+	helper = cache --timeout 10000
+[core]
+	editor = mem
+[merge]
+	tool = meld
+[push]
+	default = simple
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+
+# ci/co are for those cvs/svn diehards
+[alias]
+	ci = commit
+	co = checkout
