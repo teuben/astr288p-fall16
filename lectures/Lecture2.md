@@ -71,6 +71,25 @@ We differentiate between an *interactive*  vs. *login* shell.
 
   A1:  The current directory **.** and the parent directory **..**
 
+### Mac and Linux philosophy on interactive and login shells
+
+
+```
+  linux>  ssh localhost                                 # login
+  	  -> .bash_profile
+  linux>  xterm (or open a gnome-terminal)              # interactice
+  	  -> .bashrc
+
+  mac> ssh localhost                                    # login (enable in System Preferences -> Sharing -> Remote Login)
+       -> .bash_profile
+
+  mac> Terminal  (CMD-N)                                # login
+       -> .bash_profile                                 # if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
+       bash                                             # interactive
+       -> .bashrc 
+```
+
+If you use the **csh** variety, the **.login** and **.cshrc** files control which one is read for what type of session.
 
 ## Files and Directories - Part 1:
 
@@ -149,6 +168,7 @@ Although it does not matter where you do this, let us keep files in **~/ASTR288P
      mkdir data0.txt          (testing case sensitivity)
 ```
   Notice on a Mac this last **mkdir** may have failed. Can you see why?
+  
   2) **echo**
 ```
      echo Hello1   >  Data1.txt
@@ -263,13 +283,17 @@ the shell (the interpreter):
 ```
     cd                        # move to your home directory
     mkdir bin                 # create
-    cp astr288p/bin/*  bin
+    cp ASTR288P/astr288p/bin/*  bin
     echo $PATH                # is ~/bin already in your path? else edit your ~/.bashrc file now!
     lfind                     # check if the new 'lfind' is seen
     which lfind               # it should be in ~/bin now
     lfind lfind               # there should be two now !
 ```    
-
+for example, the 
+```
+    export PATH=~/bin:$PATH
+```
+can be added to either the .bashrc or .bash_profile file.
 
 ## VNC
 
@@ -302,7 +326,7 @@ language, and they format nicely in a web brosers.
 
 Install and use it as follows
 ```
-   sudo pip install grip
+   pip install grip
    grip Lecture2.md
 ```
 Because python also has a built-in http (web) server, you can now open a URL on
