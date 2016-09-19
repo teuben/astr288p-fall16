@@ -256,9 +256,11 @@ or if you are lucky on a mac, open this URL **vnc://ursa.astro.umd.edu:1** or fr
 GRIP:
 -----
 
-GitHub Readme Instant Preview - allows you to preview your *MarkDown* files (README.md 
-by default) in a web browser. These lecture notes are in md (*MarkDown*) format, simple
-text files that are a lightweight markup language, and they format nicely in a web brosers.
+GitHub Readme Instant Preview (GRIP): a command that allows you to preview your
+[*MarkDown*](https://en.wikipedia.org/wiki/Markdown) files (README.md
+by default) in a web browser. These lecture notes are in md
+(*MarkDown*) format, they are simple text files that are a lightweight markup
+language, and they format nicely in a web brosers.
 
 Install and use it as follows
 ```
