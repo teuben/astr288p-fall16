@@ -22,3 +22,10 @@ alias m='less'
 
 # my favorite calculator
 alias i='ipython'
+
+# create new directory and change into it (no alias needed now)
+mkcd() {
+  mkdir $1
+  cd $1
+}
+
