@@ -1,8 +1,7 @@
-Lecture 2:  UNIX
-================
+# Lecture 2:  UNIX
 
-Command Line unix vs. desktop unix (Graphical User Interface)
--------------------------------------------------------------
+## Command Line unix vs. desktop unix (Graphical User Interface)
+
   - GUI: a dime a dozen (and new ones keep coming...)
   - GUI: Mac (aqua) and Linux (X11)
   - GUI: Linux has many many window managers
@@ -14,16 +13,16 @@ The notes below loosely follow the tutorials in
     http://www.ee.surrey.ac.uk/Teaching/Unix/
 you are recommended to walk yourself through these.
 
-Login shell in a terminal:  ("chicken or egg")
-----------------------------------------------
+## Login shell in a terminal:  ("chicken or egg")
   - xterm                  (probably the oldest terminal in X11)
   - gnome-terminal         (Gnome Terminal)
   - xfce4-terminal         (XFCE4 terminal)
   - konsole                (KDE terminal)
   - emacs "M-x shell"      (yes, you can run a terminal inside of emacs)
 
-Shell options (as defined in /etc/passwd, see /etc/shells)    [does MacOS obey this?]
-----------------------------------------------------------
+## Shell options (as defined in /etc/passwd, see /etc/shells)
+CAVEAT: MacOS does not seem to use /etc/passwd
+
   - bash  (sh: bourne shell)
   - tcsh  (csh: C-shell)
   - ksh   (korn shell)
@@ -31,35 +30,31 @@ Shell options (as defined in /etc/passwd, see /etc/shells)    [does MacOS obey t
 
    Q1: how do you know which shell you are running
 
-   A1: **echo $SHELL**
-   
-       **grep $USER /etc/passwd **
-       
-       **ps**
+   A1: as is often in UNIX, several answers possible
+	* **echo $SHELL**
+	* **grep $USER /etc/passwd**
+	* **ps**
 
    Q2: What are the allowed shells on your unix system
    
-   A2: cat /etc/shells
+   A2: **cat /etc/shells**
 
 
-Persistent shells with session management (cf. VNC)
----------------------------------------------------
-  - screen
+## Persistent shells with session management (cf. VNC)
+
+  - screen   
   - tmux
 
-bash:
------
-  - interactive vs. login shell
-  - login:
-	- /etc/profile
-	- ~/.bash_profile
-	- ~/.bash_login
-	- ~/.profile
-	
-  - interactive
-  
-        - /etc/bash.bashrc
-	- ~/.bashrc
+## bash
+We differentiate between an *interactive*  vs. *login* shell. 
+   * login:
+      * /etc/profile
+      * ~/.bash_profile
+      * ~/.bash_login
+      * ~/.profile
+   * interactive
+     * /etc/bash.bashrc
+     * ~/.bashrc
 
   Some of your personal files may already be present when your account was activated. Use
   the **ls -a** command to see these hidden (files starting with a dot) files.
@@ -69,16 +64,16 @@ bash:
   A1:  The current directory **.** and the parent directory **..**
 
 
-Files and Directories - Part 1:
--------------------------------
+## Files and Directories - Part 1:
+
 ```
   ls                  LiSt files
   pwd                 Print Working Directory
   whoami              Isn't that obvious?
 ```
 
-How to get more help:
----------------------
+## How to get more help:
+
 ```
   COMMAND --help
   COMMAND --version
@@ -93,8 +88,8 @@ How to get more help:
 
   Q1: man pages have sections (the -s option) to narrow down search
 
-Files:  the "ls" command
-------------------------
+## Files:  the "ls" command
+
 ```
   ls -l
   ls -al
@@ -110,8 +105,8 @@ Files:  the "ls" command
   Q3:  what is all this "." and ".."
 
 
-Directories:
-------------
+## Directories:
+
 ```
   pwd
   mkdir ASTR288P
@@ -119,8 +114,8 @@ Directories:
   pwd
 ```
 
-git: sharing your codes, a first encounter
-------------------------------------------
+## git: sharing your codes, a first encounter
+
 ```
   git clone https://github.com/teuben/astr288p
   ls
@@ -129,8 +124,8 @@ git: sharing your codes, a first encounter
   less lectures/Lecture2.txt
 ```
 
-Creating Files:
----------------
+## Creating Files:
+
 ```
   cd ~/ASTR288P
   mkdir Lecture2
@@ -162,16 +157,16 @@ Creating Files:
 ```
   4) your favorite $EDITOR
 ```
-     emacs     (C-x C-c)  or:   ^x^c
+     emacs     (C-x C-c)  or:   ^x^c  to exit
      vi        ( ':q!"  or "ZZ" to exit, the latter one also saves the file!!!)
      pico      (^X to exit)
-     gedit     (^Q or ^W)
+     gedit     (^Q or ^W) to exit, or click on File->Quit
 ```
      Many editors keep a backup copy, often with a tilde (~) appended to the filename
 
 
-Viewing Files:
---------------
+## Viewing Files:
+
 Many ways to view a file on the terminal:
 
      cat       
@@ -182,23 +177,23 @@ Many ways to view a file on the terminal:
      head
      tail
 
-Extracting/Reducing files:
---------------------------
+## Extracting/Reducing files:
+
 
      wc        WordCount (and line and character) count
      sum       check sum (see also md5sum)
      grep      show lines that match some pattern (cf. google and googling)
 
-Other File Operations:
-----------------------
+## Other File Operations:
+
      cp        CoPy files
      mv        MoVe files (also renaming if it's not going to another directory)
      rm        ReMove files
      ln        LiNk between files (symbolic/soft vs. hard link)
 
 
-Scripting:
-----------
+## Scripting:
+
      echo "echo hello world" > hello
      bash hello
      ls -l hello
@@ -209,8 +204,8 @@ Scripting:
      echo $PATH
      ./hello
 
- Finding files:
- --------------
+## Finding files:
+
    1) 'locate'    (but:   "sudo updatedb" - normally not enabled on Mac)
 
        locate -i poster
@@ -221,8 +216,8 @@ Scripting:
        find $HOME/Talks -name "*oster*"
 
 
-Adding to your own PATH:
-------------------------
+## Adding to your own PATH:
+
     cd                        # move to your home directory
     mkdir bin                 # create
     cp astr288p/bin/*  bin
@@ -232,8 +227,8 @@ Adding to your own PATH:
     
 
 
-VNC:
-----
+## VNC
+
 Virtual Network Computing (VNC) allows you to run persistent graphical sessions to
 a server and run a full windowing system on your local machine. 
 ```
@@ -253,8 +248,7 @@ then from any other client you will be able to connect to this server (implying 
 or if you are lucky on a mac, open this URL **vnc://ursa.astro.umd.edu:1** or from the Finder *"CMD + K"*
 
 
-GRIP:
------
+## GRIP
 
 GitHub Readme Instant Preview (GRIP): a command that allows you to preview your
 [*MarkDown*](https://en.wikipedia.org/wiki/Markdown) files (README.md
@@ -267,3 +261,5 @@ Install and use it as follows
    sudo pip install grip
    grip Lecture2.md
 ```
+Because python also has a built-in http (web) server, you can now open a URL on
+[http://localhost:6419](http://localhost:6419)

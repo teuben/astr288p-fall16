@@ -2,7 +2,28 @@ Lecture 3:  UNIX
 ================
 
 
+## Updating your *astr288p* repo
+```
+   cd astr288p
+   git status         # making sure you don't have anything modified
+   git pull
+```
 
+## UNIX PATH
+
+Any command typed in the terminal will find this from an executable file along the
+directories in the $PATH environment variable:
+
+```
+   echo $PATH
+   
+   which ls
+   which man
+   which ds9
+```
+
+
+## UNIX SCRIPTS
 
 ## PYTHON
 
