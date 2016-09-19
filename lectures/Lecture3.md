@@ -3,11 +3,14 @@ Lecture 3:  UNIX
 
 
 ## Updating your *astr288p* repo
+Any time you need to update your **astr288p** git repo, the **git pull** command will do this:
 ```
-   cd astr288p
-   git status         # making sure you don't have anything modified
-   git pull
+   cd ~/ASTR288P/astr288p      # make sure you are in one of the 'astr288p' directories
+   git status                  # first make  sure you don't have anything modified
+   git pull                    # warnings are possible here if there are conflicts
 ```
+it would actually warn you if you had modified files that are also modified on the server. It will
+attempt a merge and warn you.  Files that you modified and are not modified on the server
 
 ## UNIX PATH
 

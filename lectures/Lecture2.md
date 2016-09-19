@@ -21,7 +21,7 @@ you are recommended to walk yourself through these.
   - emacs "M-x shell"      (yes, you can run a terminal inside of emacs)
 
 ## Shell options (as defined in /etc/passwd, see /etc/shells)
-CAVEAT: MacOS does not seem to use /etc/passwd
+CAVEAT: MacOS does not seem to use /etc/passwd (see http://docstore.mik.ua/orelly/unix3/mac/ch03_08.htm)
 
   - bash  (sh: bourne shell)
   - tcsh  (csh: C-shell)
@@ -39,11 +39,19 @@ CAVEAT: MacOS does not seem to use /etc/passwd
    
    A2: **cat /etc/shells**
 
+   Q3: If a shell is not listed in **/etc/shells**, can I still use it
+
+   A3: yes, simply run it from the current shell (a shell within a shell)
+
 
 ## Persistent shells with session management (cf. VNC)
+If you don't need a full graphical interface, and still want to login to server (e.g. ursa) and maintain your session,
+use any of the following programs
 
-  - screen   
-  - tmux
+  - screen        (often comes with UNIX)
+  - tmux          (and there are more)
+
+
 
 ## bash
 We differentiate between an *interactive*  vs. *login* shell. 
@@ -114,35 +122,40 @@ We differentiate between an *interactive*  vs. *login* shell.
   pwd
 ```
 
-## git: sharing your codes, a first encounter
+## git: sharing your codes: a first encounter
 
+We will come back to **git**, but the following commands will download the "astr288p" repository of codes and documentation
+that are helpful for this class.
 ```
   git clone https://github.com/teuben/astr288p
   ls
   cd astr288p
   pwd
-  less lectures/Lecture2.txt
+  less lectures/Lecture2.md
 ```
+This **Lecture2.md** file is the file you are reading now. Most humans can read it, but it does read a little nicer once it has
+been formatted by a web browser, instead of straight to the terminal! Or you can read it directly on github on
+https://github.com/teuben/astr288p/blob/master/lectures/Lecture2.md
 
 ## Creating Files:
 
+Although it does not matter where you do this, let us keep files in **~/ASTR288P**:
 ```
   cd ~/ASTR288P
-  mkdir Lecture2
-  cp ASTR288P/lectures/Lecture2.txt .
 ```
-  1) touch   (Zero Length file)
+  1) **touch**   (Zero Length file)
 ```
      touch Data0.txt
      mkdir data0.txt          (testing case sensitivity)
 ```
-  2) echo
+  Notice on a Mac this last **mkdir** may have failed. Can you see why?
+  2) **echo**
 ```
      echo Hello1   >  Data1.txt
      echo Hello2   >  Data1.txt
      echo Hello3  >>  Data1.txt
 ```
-  3) cat
+  3) **cat**
 ```
      cat > Data2.txt
      1 2 3
@@ -155,7 +168,7 @@ We differentiate between an *interactive*  vs. *login* shell.
      6 7 14
      ^D
 ```
-  4) your favorite $EDITOR
+  4) your favorite **$EDITOR**
 ```
      emacs     (C-x C-c)  or:   ^x^c  to exit
      vi        ( ':q!"  or "ZZ" to exit, the latter one also saves the file!!!)
@@ -188,12 +201,41 @@ Many ways to view a file on the terminal:
 
      cp        CoPy files
      mv        MoVe files (also renaming if it's not going to another directory)
-     rm        ReMove files
+     rm        ReMove files (directories would need the -r flag, but see also mkdir)
      ln        LiNk between files (symbolic/soft vs. hard link)
 
+Linking files is like have a convenient shortcut available, e.g.
+
+```
+	ln -s /etc/passwd               # soft link (can go across devices)
+	ls -l passwd
+	head passwd
+
+	rm passwd
+	ln /etc/passwd                  # hard link (must be on same device)
+```
+Did you get an error in the last attempt?  if you, you are likely trying this across to another device. The **df** command
+tells your devices, or on what device a file lives
+```
+	df .
+	df /etc/passwd
+
+	df
+```
+Lets try this again
+```
+	ls -l ~/.bashrc 
+	ln ~/.bashrc dot-bashrc
+	ls -l ~/.bashrc 
+```
+See something interesting in the second file listing?
 
 ## Scripting:
 
+Scripting in UNIX is nothing more than a few shell commands in a text file, which you can execute directly using
+the shell (the interpreter):
+
+```
      echo "echo hello world" > hello
      bash hello
      ls -l hello
@@ -203,10 +245,11 @@ Many ways to view a file on the terminal:
      hello
      echo $PATH
      ./hello
+```
 
 ## Finding files:
 
-   1) 'locate'    (but:   "sudo updatedb" - normally not enabled on Mac)
+   1) 'locate'    (but:   "**sudo updatedb**" - normally not enabled on Mac)
 
        locate -i poster
 
@@ -216,15 +259,15 @@ Many ways to view a file on the terminal:
        find $HOME/Talks -name "*oster*"
 
 
-## Adding to your own PATH:
-
+## Adding to your own $PATH:
+```
     cd                        # move to your home directory
     mkdir bin                 # create
     cp astr288p/bin/*  bin
-    echo $PATH                # check if ~/bin is already in your path
+    echo $PATH                # is ~/bin already in your path? else edit your ~/.bashrc file now!
     lfind                     # check if the new 'lfind' is seen
     lfind lfind               # there should be two now !
-    
+```    
 
 
 ## VNC
