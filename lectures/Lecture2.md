@@ -56,7 +56,8 @@ bash:
         - /etc/bash.bashrc
 	- ~/.bashrc
 
-  Some of your personal files may already be present
+  Some of your personal files may already be present when your account was activated. Use
+  the **ls -a** command to see these hidden (files starting with a dot) files.
 
 
 Files and Directories - Part 1:
@@ -235,4 +236,15 @@ only once to start/stop:
 
 ```
 vncviewer ursa.astro.umd.edu:1
+```
+
+GRIP:
+-----
+
+GitHub Readme Instant Preview - allows you to preview your *MarkDown* files (README.md 
+by default) in a web browser.
+Install and use it as follows
+```
+   sudo pip install grip
+   grip Lecture2.md
 ```
