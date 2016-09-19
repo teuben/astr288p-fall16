@@ -8,16 +8,19 @@ Command Line unix vs. desktop unix (Graphical User Interface)
   - GUI: Linux has many many window managers
          (twm, fvwm, enlightenment, gnome, kde, unity, plasma)
   - GUI: Linux is changing from using X11 to Wayland
-  - CLI: one and only one (minor differences do remain between Mac and Linux)
+  - CLI: one and only one (though minor differences do remain between Mac and Linux)
 
 The notes below loosely follow the tutorials in
     http://www.ee.surrey.ac.uk/Teaching/Unix/
+you are recommended to walk yourself through these.
 
 Login shell in a terminal:  ("chicken or egg")
 ----------------------------------------------
-  - xterm
-  - Gnome Terminal
-  - emacs "M-x shell"
+  - xterm                  (probably the oldest terminal in X11)
+  - gnome-terminal         (Gnome Terminal)
+  - xfce4-terminal         (XFCE4 terminal)
+  - konsole                (KDE terminal)
+  - emacs "M-x shell"      (yes, you can run a terminal inside of emacs)
 
 Shell options (as defined in /etc/passwd, see /etc/shells)    [does MacOS obey this?]
 ----------------------------------------------------------
@@ -29,7 +32,9 @@ Shell options (as defined in /etc/passwd, see /etc/shells)    [does MacOS obey t
    Q1: how do you know which shell you are running
 
    A1: **echo $SHELL**
+   
        **grep $USER /etc/passwd **
+       
        **ps**
 
    Q2: What are the allowed shells on your unix system
@@ -58,6 +63,10 @@ bash:
 
   Some of your personal files may already be present when your account was activated. Use
   the **ls -a** command to see these hidden (files starting with a dot) files.
+
+  Q1:  With the **ls -a** command you will also see **.** and **..**    what are those?
+
+  A1:  The current directory **.** and the parent directory **..**
 
 
 Files and Directories - Part 1:
@@ -163,10 +172,12 @@ Creating Files:
 
 Viewing Files:
 --------------
+Many ways to view a file on the terminal:
+
      cat       
-     more
-     less
-     tac
+     more      ('q' to get out, '?' to get help)
+     less      (/FOO   to search for the word FOO)
+     tac       (reverses the lines)
 
      head
      tail
@@ -174,9 +185,9 @@ Viewing Files:
 Extracting/Reducing files:
 --------------------------
 
-     wc
-     sum
-     grep         
+     wc        WordCount (and line and character) count
+     sum       check sum (see also md5sum)
+     grep      show lines that match some pattern (cf. google and googling)
 
 Other File Operations:
 ----------------------
@@ -223,26 +234,32 @@ Adding to your own PATH:
 
 VNC:
 ----
+Virtual Network Computing (VNC) allows you to run persistent graphical sessions to
+a server and run a full windowing system on your local machine. 
 ```
-ssh teuben288@ursa.astro.umd.edu
+     LAPTOP> ssh teuben288@ursa.astro.umd.edu
 ```
-only once to start/stop:
+On the server (ursa) you need to only once  start/stop (and note with display it is using  (:1 in this example)):
 ```
-     vncserver -geometry 1600x900
+     SERVER> vncserver -geometry 1600x900
      	       (controlled by ~/.vnc/xstartup )
      	       New 'ursa.astro.umd.edu:1 (teuben288)' desktop is ursa.astro.umd.edu:1
-     vncserver -kill :1
+     SERVER> vncserver -kill :1
 ```     
+then from any other client you will be able to connect to this server (implying multiple people can connect)
+```
+     LAPTOP> vncviewer ursa.astro.umd.edu:1
+```
+or if you are lucky on a mac, open this URL **vnc://ursa.astro.umd.edu:1** or from the Finder *"CMD + K"*
 
-```
-vncviewer ursa.astro.umd.edu:1
-```
 
 GRIP:
 -----
 
 GitHub Readme Instant Preview - allows you to preview your *MarkDown* files (README.md 
-by default) in a web browser.
+by default) in a web browser. These lecture notes are in md (*MarkDown*) format, simple
+text files that are a lightweight markup language, and they format nicely in a web brosers.
+
 Install and use it as follows
 ```
    sudo pip install grip
