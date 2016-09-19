@@ -25,8 +25,27 @@ directories in the $PATH environment variable:
    which ds9
 ```
 
-
 ## UNIX SCRIPTS
+
+recall: a UNIX script is nothing more than a few shell commands in a text file, which you can execute directly using
+the shell (the interpreter). You do need to make that text file executable (**chmod +x**)
+
+Recall from the previous lecture:
+```
+   echo echo hello world > hello
+   chmod +x hello
+   hello
+```
+Q1:  what happens if you left out the 2nd *echo* in the command that created the script?
+
+Q2: the following shell commands do something very convoluted. How would you achive the same result?
+```
+   echo '#! /bin/bash' >> hello
+   tac hello  > hello1
+   mv hello1 hello
+   chmod +x hello
+```   
+   
 
 ## PYTHON
 
@@ -80,3 +99,56 @@ Now continue installing some modules that we will need for future lectures
 ```
 
 
+### Hello World! in python
+
+```
+	echo 'print("Hello World!")' > hello.py
+	python hello.py
+```	
+
+Following on our previous **"#!"** example we can avoid having to type the name **python** :
+```
+	#! /usr/bin/python
+	#
+	print("Hello World!")
+```
+or even more general
+```
+	#! /usr/bin/env python
+	#
+	print("Hello World!")
+```
+
+### plotting example
+Previously we created a small dataset **Data2.txt** in the **ASTR288P** directory. This is how it should plot
+on your screen
+
+```
+	astr288p/python/tabplot.py Data2.txt
+```
+
+
+### C compiler hello world
+
+```
+	cat hello.c
+
+#include <stdio.h>
+
+void main() 
+{
+  printf("Hello World from C!\n");
+}
+
+	gcc -o helloc hello.c
+	ls -l hello.c
+	ls -l helloc
+	helloc
+	more helloc
+	cat helloc
+
+```
+
+Q1:  cut and paste the C code into your own hello.c and compile and run this program
+
+Q2:  observe the difference between **more** and **cat**

@@ -266,6 +266,7 @@ the shell (the interpreter):
     cp astr288p/bin/*  bin
     echo $PATH                # is ~/bin already in your path? else edit your ~/.bashrc file now!
     lfind                     # check if the new 'lfind' is seen
+    which lfind               # it should be in ~/bin now
     lfind lfind               # there should be two now !
 ```    
 
