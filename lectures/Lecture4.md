@@ -17,9 +17,9 @@ Always update your git repo for this class. New material is more than likely pre
 
 ## Python 
 
-In the previous lecture we installed our own version (miniconda3) of pythin. Make sure
+In the previous lecture we installed our own version (miniconda3) of Python. Make sure
 you have the right version using the **which** command!   There are at least 4 ways you
-may run python:
+may wind up running python:
 
 * python: the script interpreter
 
@@ -28,10 +28,12 @@ may run python:
 	which python
 ```
 
-	Normally never typed by the user, but python scripts normally start with
+Normally never used interactively, but python scripts normally start with
 ```
 	 #! /usr/bin/env python
 ```
+so you can use them just like another unix command on the terminal/command line.
+(see also the **hello world** python example from the previous lecture)
 
 * ipython: interactive python
 ```
@@ -39,6 +41,19 @@ may run python:
 	alias i=ipython
 	which ipython
 ```	
+This is the way to quickly try something out.
+
+* graphical user interface
+
+Here there are quite a few options, most of them have *introspection-based code completion* and *integrated debugger*
+
+    * PyCharm
+    * KDevelop
+    * PyDev (eclipse)
+    * Spyder (anaconda)
+      You can install this:   *conda install spyder*
+
+We will not be using this in this class, but it can be a great way for development.
 
 * jupyter: web interface
 
@@ -50,14 +65,5 @@ may run python:
 ```	
 
 Now watch your default browser opening a new tab. Navigave to your **astr288p/notebooks** folder, where
-you should see some *ipynb* files.
+you should see some *ipynb* files.  The rest of this lecture will be taking place in the notebooks.
 
-* graphical user interface
-
-Here there are quite a few options, most of them have *introspection-based code completion* and *integrated debugger*
-
-    * PyCharm
-    * KDevelop
-    * PyDev (eclipse)
-    * Spyder (anaconda)
-      You can install this:   *conda install spyder*
