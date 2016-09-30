@@ -11,7 +11,11 @@ Always update your git repo for this class. New material is more than likely pre
    git pull                    # warnings are possible here if there are conflicts
 ```
 
-## Python flavors
+* Unix Shell : http://swcarpentry.github.io/shell-novice/
+* Python : http://swcarpentry.github.io/python-novice-inflammation/
+* PSL :   https://swcarpentry.github.io/python-second-language/
+
+## Python 
 
 * python: the script interpreter
 
@@ -19,37 +23,24 @@ Always update your git repo for this class. New material is more than likely pre
 	python
 ```
 
+	Normally never typed by the user, but python scripts normally start with
+```
+	 #! /usr/bin/env python
+```
+
 * ipython: interactive python
 ```
 	ipython
+	alias i=ipython
 ```	
 
 * jupyter: web interface
 
 ```
 	ipython notebook
+	jupyter notebook
 	
 ```	
 
-
-## UNIX SCRIPTS
-
-recall: a UNIX script is nothing more than a few shell commands in a text file, which you can execute directly using
-the shell (the interpreter). You do need to make that text file executable (**chmod +x**)
-
-Recall from the previous lecture:
-```
-   echo echo hello world > hello
-   chmod +x hello
-   hello
-```
-Q1:  what happens if you left out the 2nd *echo* in the command that created the script?
-
-Q2: the following shell commands do something very convoluted. How would you achive the same result?
-```
-   echo '#! /bin/bash' >> hello
-   tac hello  > hello1
-   mv hello1 hello
-   chmod +x hello
-```   
-   
+Now watch your default browser opening a new tab. Navigave to your **astr288p/notebooks** folder, where
+you should see some *ipynb* files.

@@ -335,6 +335,7 @@ Install and use it as follows
 ```
    pip install grip
    grip Lecture2.md
+   grip Lecture3.md localhost:6420
 ```
 Because python also has a built-in http (web) server, you can now open a URL on
 [http://localhost:6419](http://localhost:6419)

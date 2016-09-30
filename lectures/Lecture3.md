@@ -70,7 +70,8 @@ At some point you might see the message **no module named**.
 
 **Miniconda** is a very barebones version of python which you can then tailor to your own needs. See also
 http://conda.pydata.org/miniconda.html.
-If you need more, download the full **Anaconda** version. See https://www.continuum.io
+If you need more, download the full **Anaconda** version. With this you also get a nice graphical install.
+See https://www.continuum.io
 
 ### On Linux:
 ```
@@ -95,7 +96,13 @@ Now continue installing some modules that we will need for future lectures
 ```
   conda install ipython numpy scipy matplotlib notebook ipywidgets networkx
   conda install astropy
+  conda install jupyter
 
+```
+
+See what modules you have installed:
+```
+  conda list
 ```
 
 
