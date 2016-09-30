@@ -67,3 +67,5 @@ We will not be using this in this class, but it can be a great way for developme
 Now watch your default browser opening a new tab. Navigave to your **astr288p/notebooks** folder, where
 you should see some *ipynb* files.  The rest of this lecture will be taking place in the notebooks.
 
+Apart from the [Software Carpentry](http://software-carpentry.org) lessons, a comprehensive python
+tutorial that we often will come back to is on https://www.tutorialspoint.com/python/index.htm
