@@ -71,14 +71,21 @@ We differentiate between an *interactive*  vs. *login* shell.
 
   A1:  The current directory **.** and the parent directory **..**
 
-### Mac and Linux philosophy on interactive and login shells
+### Linux and Mac philosophy on interactive and login shells different?
 
+This is often source of confusion and discussed online
+(e.g. see http://unix.stackexchange.com/questions/119627/why-are-interactive-shells-on-osx-login-shells-by-default)
+
+Here's a summary for Linux and Mac, and when they read the startup files (WARNING: they are not the same!)
 
 ```
   linux>  ssh localhost                                 # login
-  	  -> .bash_profile
-  linux>  xterm (or open a gnome-terminal)              # interactice
-  	  -> .bashrc
+  	  bash: .bash_profile                           # Q: what about .bash_login and .profile?
+	  tcsh: .cshrc .login                           # in that order
+	  
+  linux>  xterm (or open a gnome-terminal)              # interactive
+  	  bash: .bashrc
+	  tcsh: .cshrc
 
   mac> ssh localhost                                    # login (enable in System Preferences -> Sharing -> Remote Login)
        -> .bash_profile
