@@ -7,14 +7,12 @@
 #  based on:
 #  http://stackoverflow.com/questions/5260593/is-there-a-command-line-tool-for-data-visualization-and-analysis
 #
+#  http://matplotlib.org/faq/usage_faq.html#matplotlib-pyplot-and-pylab-how-are-they-related
 #
 #  @todo    have a batch mode
 
 import sys
-import matplotlib.pyplot as pyplot
-# import mpld3
-
-pyplot.ion()
+import matplotlib.pyplot as plt
 
 for filename in sys.argv[1:]:
    with open(filename,'rt') as sf:
@@ -24,7 +22,8 @@ for filename in sys.argv[1:]:
          table.append( [float(val) for val in line.split()] )
       table = [ row for row in table if len(row) ] ## remove empty rows
       if len(table[0]) == 1 :
-         pyplot.plot( [y[0] for y in table ] )
+         plt.plot( [y[0] for y in table ] )
       for x in xrange(1,len(table[0])):
-         pyplot.plot( [ y[0] for y in table ], [ y[x] for y in table ] )
-pyplot.show()
+         plt.plot( [ y[0] for y in table ], [ y[x] for y in table ] )
+
+plt.show()
