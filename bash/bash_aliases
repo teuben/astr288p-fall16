@@ -20,8 +20,9 @@ alias hgrep='history|grep'
 # view files with page forward, backward, and /search
 alias m='less'
 
-# my favorite calculator
+# my favorite calculators
 alias i='ipython'
+alias j='jupyter notebook'
 
 # create new directory and change into it (no alias needed now)
 mkcd() {
