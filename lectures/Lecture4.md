@@ -17,10 +17,15 @@ Always update your git repo for this class. New material is more than likely pre
 
 ## Python 
 
+In the previous lecture we installed our own version (miniconda3) of pythin. Make sure
+you have the right version using the **which** command!   There are at least 4 ways you
+may run python:
+
 * python: the script interpreter
 
 ```
 	python
+	which python
 ```
 
 	Normally never typed by the user, but python scripts normally start with
@@ -32,6 +37,7 @@ Always update your git repo for this class. New material is more than likely pre
 ```
 	ipython
 	alias i=ipython
+	which ipython
 ```	
 
 * jupyter: web interface
@@ -39,8 +45,19 @@ Always update your git repo for this class. New material is more than likely pre
 ```
 	ipython notebook
 	jupyter notebook
+	which jupyter 
 	
 ```	
 
 Now watch your default browser opening a new tab. Navigave to your **astr288p/notebooks** folder, where
 you should see some *ipynb* files.
+
+* graphical user interface
+
+Here there are quite a few options, most of them have *introspection-based code completion* and *integrated debugger*
+
+    * PyCharm
+    * KDevelop
+    * PyDev (eclipse)
+    * Spyder (anaconda)
+      You can install this:   *conda install spyder*
