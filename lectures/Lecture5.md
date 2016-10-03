@@ -11,7 +11,13 @@ As always, update your git repo. After last weeks' work, you might see a problem
    git pull                    # warnings are possible here if there are conflicts
    git stash                   # those modified files are "stashed"
    git pull                    # now get the updates
-   
+```
+For the purpose of our class, it probably was overkill  to *"stash"* these files,
+and removing them would have been more efficient:
+```
+   git status
+   rm notebooks/*.*
+   git pull
 ```
 
 * Unix Shell : http://swcarpentry.github.io/shell-novice/
