@@ -2,7 +2,7 @@ Lecture 5:  PYTHON
 ==================
 
 
-## Updating your *astr288p* repo
+## Updating your *astr288p* repo (with a twist)
 
 As always, update your git repo. After last weeks' work, you might see a problem now!
 ```
@@ -13,16 +13,19 @@ As always, update your git repo. After last weeks' work, you might see a problem
    git pull                    # now get the updates
 ```
 For the purpose of our class, it probably was overkill  to *"stash"* these files,
-and removing them would have been more efficient:
+and removing them would have been more efficient, perhaps. So, instead if we do
 ```
    git status
    rm notebooks/*.*
    git pull
 ```
+But oops, there is more trouble!  The ones that were not modified, and we removed, are now gone,
+and git claims we're up to date. Surely this must be a git bug? It's actually a feature, perhaps
+somewhat unexpected.
 
-* Unix Shell : http://swcarpentry.github.io/shell-novice/
-* Python : http://swcarpentry.github.io/python-novice-inflammation/
-* PSL :   https://swcarpentry.github.io/python-second-language/
+```
+git checkout origin/master 03-arrays.ipynb
+```
 
 ## Python 
 
