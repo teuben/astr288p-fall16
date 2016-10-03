@@ -27,7 +27,29 @@ somewhat unexpected.
 git checkout origin/master 03-arrays.ipynb
 ```
 
-## Python 
+## Python
+
+### Official references
+
+* Python Language Reference: https://docs.python.org/3/reference/
+* Python Standard Library: https://docs.python.org/3/library/
+* Python Tutorial: https://docs.python.org/3/tutorial/
+
+### miniconda3 on the student cluster
+
+If you have trouble installing miniconda3 (see Lecture3) on the student cluster, you can also use
+the public (so-called astromake) version as follows:
+```
+   export PATH=/astromake/opt/python/miniconda3/bin/:$PATH
+```
+and there is also my own personal one:
+```
+   export PATH=/n/ursa/A288P/teuben288/miniconda3/bin/:$PATH
+```
+
+
+
+### 
 
 We continue with the ipython notebooks from last week, using the command
 
