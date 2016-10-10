@@ -1,4 +1,4 @@
-Lecture 5:  ASTROPY
+Lecture 6:  ASTROPY
 ===================
 
 
