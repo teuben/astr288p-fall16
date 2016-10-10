@@ -25,6 +25,7 @@ Another option is to work in a git branch:
 ```
    git branch trials                   # create a new branch
    git branch                          # see which branches you have
+   git branch -r                       # or which branches are on the remote
    git checkout trials                 # go to the new branch
    jupiter notebooks                   # work in the current notebooks (branch)
 
@@ -87,3 +88,10 @@ Various ways, in increasing complexity and varying degrees of success:
 	cd ginga
 	python setup.py install
 ```
+
+## Today's notebooks:
+
+* **n6503-case1** : analyzing the new ngc6503.cube.fits using astropy
+* **n6503-case2** : analyzing the new ngc6503.cube.fits using radio-astro-tools (experimental)
+* **n6503-orbits** : theoretical models what to expect of a galactic velocity field
+
