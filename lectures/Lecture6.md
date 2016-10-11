@@ -95,3 +95,7 @@ Various ways, in increasing complexity and varying degrees of success:
 * **n6503-case2** : analyzing the new ngc6503.cube.fits using radio-astro-tools (experimental)
 * **n6503-orbits** : theoretical models what to expect of a galactic velocity field
 
+## Other Interesting Notebooks:
+
+*  GW150914 merging black hole : https://losc.ligo.org/s/events/GW150914/GW150914_tutorial.html
+
