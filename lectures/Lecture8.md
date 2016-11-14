@@ -27,4 +27,3 @@ notebooks:  problem4 and problem3 (=rzsum)
 * **n6503-case1** : analyzing the new ngc6503.cube.fits using astropy
 * **n6503-case2** : analyzing the new ngc6503.cube.fits using radio-astro-tools (still experimental)
 * **n6503-orbits** : theoretical models what to expect of a galactic velocity field
-
