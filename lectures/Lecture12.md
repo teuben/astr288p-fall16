@@ -1,5 +1,5 @@
-Lecture 11: ORBITS and ODE's
-===========================
+Lecture 12: Fitting and PDE's
+=============================
 
 
 ## notebooks:
